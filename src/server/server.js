@@ -10,7 +10,7 @@ let port = process.env.PORT || 3000;
 let routes = new Router();
 var app = koa();
 
-// support nested query tring params
+// support nested query string params
 qs(app);
 
 if (process.env.NODE_ENV !== 'test') {
@@ -20,7 +20,7 @@ if (process.env.NODE_ENV !== 'test') {
 routes.get('/data', function* () {
   var query = this.query.query;
   var params = this.query.params;
-  
+
   var resp = yield graphql(schema, query, '', params);
 
   if (resp.errors) {

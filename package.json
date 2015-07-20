@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node --harmony src/server/index.js",
-    "client": "node src/client/index.js",
-    "test": "NODE_ENV=test mocha --compilers js:babel/register --require co-mocha $(find src -name \"*.spec.js\")"
+    "client": "node --harmony src/client/index.js",
+    "populate": "node --harmony src/populate/index.js",
+    "test": "NODE_ENV=test mocha --harmony --compilers js:babel/register --require co-mocha $(find src -name \"*.spec.js\")"
   },
   "author": "RisingStack",
   "license": "ISC",
